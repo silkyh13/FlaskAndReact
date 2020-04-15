@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import BlogPosts from "./BlogPosts";
 
 class App extends React.Component {
@@ -42,28 +41,7 @@ class App extends React.Component {
     console.log("edit", id);
   };
   render() {
-    return (
-      <div className="App">
-        <div className="txn">
-          <div className="txn-table">
-            <div className="txn-header txn-row">
-              <div className="txn-data">Topic</div>
-              <div className="txn-data">Post</div>
-              <div className="txn-data">Date</div>
-              <div className="txn-data">Delete</div>
-            </div>
-          </div>
-          <BlogPosts
-            data={this.state.posts}
-            edit={this.edit}
-            onClick={this.delete}
-          />
-        </div>
-        <div className="add-data" onClick={this.add}>
-          &#43;
-        </div>
-      </div>
-    );
+    return <div className="App"></div>;
   }
 }
 
