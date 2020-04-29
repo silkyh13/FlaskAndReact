@@ -1,14 +1,6 @@
 import React from "react";
-// import BlogPosts from "./BlogPosts";
-import {
-  Box,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableContainer,
-} from "@material-ui/core";
+import MaterialTableDemo from "./BlogPosts";
+import { Box } from "@material-ui/core";
 import MaterialTable from "material-table";
 
 class App extends React.Component {
@@ -57,7 +49,6 @@ class App extends React.Component {
       body: JSON.stringify(data),
     })
       .then(function (res) {
-        this.get();
         return res.json();
       })
       .then(function (data) {
@@ -73,15 +64,14 @@ class App extends React.Component {
       body: JSON.stringify(someData),
     }).then((response) => {
       response.json();
-      this.get();
     });
   };
   render() {
     return (
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" flexDirection="row">
         <Box border="groove" width="60vw" mt="100px">
           <MaterialTable
-            title="Blog Post"
+            title="Tasks"
             columns={this.state.columns}
             data={this.state.rows}
             editable={{
@@ -112,6 +102,7 @@ class App extends React.Component {
             }}
           />
         </Box>
+        {/* <MaterialTableDemo /> */}
       </Box>
     );
   }
